@@ -35,7 +35,7 @@ class main extends CI_Controller
 	function login(){
 
 		$this->load->model('login');
-		$data['result']=$this->login->get_users();
+		echo $this->login->get_users();
 		
 	}
  public function logout(){
@@ -67,6 +67,12 @@ class main extends CI_Controller
 
 		$this->load->model($this->uri->segment(3));
 		$this->{$this->uri->segment(3)}->save();
+    }
+    public function load_data(){
+		
+
+		$this->load->model($this->uri->segment(3));
+		$this->{$this->uri->segment(3)}->{$this->uri->segment(4)}();
     }
 }
 

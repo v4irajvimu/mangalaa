@@ -114,7 +114,7 @@
 				</div>
 				<div class="field">
 					<label for="tp_fixed">Contact [Fixed]:</label>
-					<input type="text" id="tp_fixed" name="tp_fixed" value="" placeholder="Confirm Password" class="login"/>
+					<input type="text" id="tp_fixed" name="tp_fixed" value="" placeholder="Contact [Fixed]" class="login"/>
 				</div>
 
 				<div class="field">
@@ -124,7 +124,7 @@
 				<div class="field">
 					<label for="confirm_password">Confirm Password:</label>
 					<input type="password" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" class="login"/>
-					<input type="hidden" name="online" value="0">
+					<input type="hidden" name="online" value="1">
 					<input type="hidden" name="created" value="<?=date('Y-m-d h:i:s')?>">
 					<input type="hidden" name="updated" value="<?=date('Y-m-d h:i:s')?>">
 				</div>

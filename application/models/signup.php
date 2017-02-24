@@ -38,7 +38,12 @@ public function save(){
         $sum [$key] = $value;
       }
       $sum['password'] = md5($sum['password']);
+      $sum['code'] = $code;
+
       unset($sum['confirm_password']);
+      if(isset($_POST['Field'])){
+        unset($sum['Field']);
+      }
        $this->db->insert('customer', $sum);
        $a['res']=$this->db->trans_commit();      
    } 

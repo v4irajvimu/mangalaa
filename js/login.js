@@ -8,18 +8,18 @@ $(document).ready(function(){
 
 function login(){
 
-	if($('#username').val()=='' &&  $('#password').val()==''){
-		alert('Please Enter user name and password');
-		$('#u_name').focus();
+	if($('#email').val()=='' &&  $('#password').val()==''){
+		alert('Please Enter Email and password');
+		$('#email').focus();
 	}	
 	else if ($('#password').val()==''){
 		alert('Please Enter password');
 		$('#password').focus();
 	}
-	else if($('#username').val()==''){
+	else if($('#email').val()==''){
 		alert('Please Enter Email');
-		$('#u_name').focus();
-	}else if($('#username').val()!='' &&  $('#password').val()!=''){
+		$('#email').focus();
+	}else if($('#email').val()!='' &&  $('#password').val()!=''){
 		validate_login();
 	}
 
@@ -29,16 +29,16 @@ function login(){
 
 function validate_login(){
 	$.post("index.php/main/login", {
-        email:$('#username').val(),
+        email:$('#email').val(),
         password:$('#password').val()
     }, function(r){
        if(r==1){
-       location.href='http://localhost/mangala/';
+       location.href='http://localhost/mangalaa/';
        }else{
        	alert("Wrong login Information");
        }
 
-    },"json");
+    },"text");
 
 
 }

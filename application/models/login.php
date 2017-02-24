@@ -17,7 +17,7 @@ class login extends CI_Model
 
 function get_users(){
 
-	$query=$this->db->query("select * from customer where email='".$_POST['user_name']."' and password='".md5($_POST['password'])."' ");
+	$query=$this->db->query("select * from customer where email='".$_POST['email']."' and password='".md5($_POST['password'])."' ");
 	
 	if($query->num_rows()>0){
 		$res = $query->first_row();
