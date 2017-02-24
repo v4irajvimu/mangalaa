@@ -36,6 +36,7 @@ class main extends CI_Controller
 
 		$this->load->model('login');
 		$data['result']=$this->login->get_users();
+		
 	}
  public function logout(){
 

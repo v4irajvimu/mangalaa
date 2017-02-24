@@ -17,7 +17,7 @@ function login(){
 		$('#password').focus();
 	}
 	else if($('#username').val()==''){
-		alert('Please Enter user name');
+		alert('Please Enter Email');
 		$('#u_name').focus();
 	}else if($('#username').val()!='' &&  $('#password').val()!=''){
 		validate_login();
@@ -29,11 +29,11 @@ function login(){
 
 function validate_login(){
 	$.post("index.php/main/login", {
-        user_name:$('#username').val(),
+        email:$('#username').val(),
         password:$('#password').val()
     }, function(r){
        if(r==1){
-       location.href='http://localhost:81/mangala/';
+       location.href='http://localhost/mangala/';
        }else{
        	alert("Wrong login Information");
        }

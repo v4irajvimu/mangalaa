@@ -11,25 +11,17 @@ class Signup extends CI_Model{
 
 
   public function base_details(){
-      
-    $a['max_no']=$this->get_max_no("user","code");
-    return $a;
+    //$a['max_no']=$this->get_max_no("user","code");
+    //return $a;
 
 }
- public function get_max_no($table_name,$field_name){
-    if(isset($_POST['hid'])){
-      if($_POST['hid'] == "0" || $_POST['hid'] == ""){      
-        $this->db->select_max($field_name);
-        return $this->db->get($table_name)->first_row()->$field_name+1;
-      }else{
-        return $_POST['hid'];  
-      }
-    }else{
-      $this->db->select_max($field_name);  
-      return $this->db->get($table_name)->first_row()->$field_name+1;
-    }
-  }
-
+ public function generateCode() {
+      $count = $this->db->get('customer')->num_rows();
+            $str = ++$count;
+            $paded = str_pad($str,5,"0",STR_PAD_LEFT);
+            $code = "C".date('d')."".date('m')."".date('Y')."_".$paded;
+            return $code;
+}
 
 public function save(){
 
@@ -40,19 +32,14 @@ public function save(){
     }
     set_error_handler('exceptionThrower'); 
     try { 
-
-    
-       $sum=array(
-
-          "code"         => $_POST['code'],
-          "fname"       => $_POST['fname'],
-          "uid"       => $_POST['uid'],
-          "password"   => $_POST['password'],
-          "description"  => $_POST['description'],
-
-          );
-
-       $this->db->insert('user', $sum);
+      $code = $this->generateCode();
+      $sum = array();
+      foreach ($_POST as $key => $value) {
+        $sum [$key] = $value;
+      }
+      $sum['password'] = md5($sum['password']);
+      unset($sum['confirm_password']);
+       $this->db->insert('customer', $sum);
        $a['res']=$this->db->trans_commit();      
    } 
       catch ( Exception $e ) { 

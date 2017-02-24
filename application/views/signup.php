@@ -18,7 +18,7 @@
 	<link href="css/pages/signin.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/signin.js"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
 
 </head>
 
@@ -80,30 +80,54 @@
 				<p>Create your free account:</p>
 				
 				<div class="field">
-					<label for="firstname">First Name:</label>
-					<input type="text" id="firstname" name="firstname" value="" placeholder="First Name" class="login" />
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" value="" placeholder="Name" class="login" />
 				</div> <!-- /field -->
 				
 				<div class="field">
-					<label for="lastname">Last Name:</label>	
-					<input type="text" id="lastname" name="lastname" value="" placeholder="Last Name" class="login" />
+					<label for="nic">NIC:</label>	
+					<input type="text" id="nic" name="nic" value="" placeholder="NIC" class="login" />
 				</div> <!-- /field -->
 				
 				
 				<div class="field">
-					<label for="email">Email Address:</label>
-					<input type="text" id="email" name="email" value="" placeholder="Email" class="login"/>
+					<label for="address">Address:</label>
+					<textarea type="text" id="address" name="address" value="" placeholder="Address" class="login"></textarea>
 				</div> <!-- /field -->
 				
+				<div class="field">
+					<label for="gender">Gender:</label>
+					<select type="text" id="gender" name="gender" value=""  class="login">
+						<option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                        <option value="OTHER">Other</option>
+					</select>
+				</div> <!-- /field -->
+				
+				<div class="field">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" value="" placeholder="Email" class="login"/>
+				</div> <!-- /field -->
+				<div class="field">
+					<label for="tp_mobile">Contact [Mobile]:</label>
+					<input type="text" id="tp_mobile" name="tp_mobile" value="" placeholder="Contact [Mobile]" class="login"/>
+				</div>
+				<div class="field">
+					<label for="tp_fixed">Contact [Fixed]:</label>
+					<input type="text" id="tp_fixed" name="tp_fixed" value="" placeholder="Confirm Password" class="login"/>
+				</div>
+
 				<div class="field">
 					<label for="password">Password:</label>
 					<input type="password" id="password" name="password" value="" placeholder="Password" class="login"/>
-				</div> <!-- /field -->
-				
+				</div>
 				<div class="field">
 					<label for="confirm_password">Confirm Password:</label>
 					<input type="password" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" class="login"/>
-				</div> <!-- /field -->
+					<input type="hidden" name="online" value="0">
+					<input type="hidden" name="created" value="<?=date('Y-m-d h:i:s')?>">
+					<input type="hidden" name="updated" value="<?=date('Y-m-d h:i:s')?>">
+				</div>
 				
 			</div> <!-- /login-fields -->
 			
