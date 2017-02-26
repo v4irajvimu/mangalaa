@@ -16,6 +16,11 @@
         
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+            <link href='<?= base_url(); ?>css/fullcalendar.min.css' rel='stylesheet' />
+             <link href='<?= base_url(); ?>css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+             
+             
         </head> 
 
         <div class="site-header">

@@ -24,7 +24,8 @@ function get_users(){
 		$session_data = array(
 		    "is_login"=>true,
 		    "up_is_login"=>true,
-		    "code" =>$res->code		    
+		    "code" =>$res->code,
+		    "customer_id"=>$res->id,		    
 		);
 		
 		$this->session->set_userdata($session_data);

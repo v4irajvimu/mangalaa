@@ -73,4 +73,10 @@
         <script src="js/bootstrap.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <script src='<?= base_url(); ?>js/moment.min.js'></script>
+             <script src='<?= base_url(); ?>js/jquery.min.js'></script>
+             <script src='<?= base_url(); ?>js/fullcalendar.min.js'></script>
+
+             
         <!-- templatemo 409 travel -->  
